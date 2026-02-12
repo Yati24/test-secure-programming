@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Clicker Vulnérable</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div style="text-align: right; margin-bottom: 10px;">
+            <a href="/logout" style="font-size: 0.8rem; color: #ff5252;">Déconnexion</a>
+        </div>
+
+        <h1>Salut {{ user['username'] | safe }} !</h1>
+        
+        <div class="score-display">
+            Points : <span id="score">{{ user['score'] }}</span>
+        </div>
+
+        <button id="clicker">CLICK !</button>
+
+        <br>
+        <a href="/leaderboard">🏆 Voir le Classement</a>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

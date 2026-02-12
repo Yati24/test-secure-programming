@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Classement</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>🏆 Tableau des Scores 🏆</h1>
+    <a href="/">Retour au jeu</a>
+    
+    <table border="1">
+        <tr>
+            <th>Joueur</th>
+            <th>Score</th>
+        </tr>
+        {% for player in users %}
+        <tr>
+            <td>{{ player.username | safe }}</td>
+            <td>{{ player.score }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
